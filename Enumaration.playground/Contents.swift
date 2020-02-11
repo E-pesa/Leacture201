@@ -24,3 +24,4 @@ func check_weather(weather:WeatherType) -> String?{
     
     }
 }
+print(check_weather(weather: .wind(speed: 20)))
