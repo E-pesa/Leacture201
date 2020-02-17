@@ -1,19 +1,20 @@
 import threading
-import logging
 import time
 
-def theardign_fuunction(name):
-    logging.info(f"Therding {name} starting,")
-    time.sleep(2)
-    logging.info(f"Therading {name} Ending")
+def treat():
+    for _ in range(10):
+        time.sleep(5)
+        print("hello there")
 
-if __name__ == '__main__':
-    formater = "%(asctime)s: %(message)s"
-    logging.basicConfig(format=formater,level=logging.INFO,datefmt="%H:%M:%S")
-    logging.info("Main before creating")
-    x = threading.Thread(target=theardign_fuunction, args=(1,))
-    logging.info("Main before start threading")
+def number(n):
+    for _ in range(3):
+        print(n)
+
+
+if __name__ == "__main__":
+    x = threading.Thread(target=number, args=(1,))
+    y = threading.Thread(target=treat, args=())
+    y.start()
     x.start()
-    logging.info("Main : waitning for threading to finish")
     x.join()
-    logging.info("Main ending")
+    y.join()
