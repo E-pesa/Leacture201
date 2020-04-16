@@ -24,5 +24,20 @@ if __name__ == "__main__":
                 print(Transaction_id,amount,phone,sender,date,time)
 
 
+    def check_payment(transaction_number):
+        """check if a given transaction ID: exists"""
+        try:
+            if transaction_number == Transaction_id:
+                """check if amount sent is equal to price tag"""
+                pricetag = None
+                if pricetag == amount:
+                    sms.send_sms(ctx,dest=phone,msg=f"{sender} thanks for your donation :)")
+                else:
+                    sms.send_sms(ctx,dest=phone,msg="{sender} The amount you have sent is low")
+            else:
+                print("Please Enter the correct Transaction id")
+
+        except Exception as e:
+            pass
 
 
