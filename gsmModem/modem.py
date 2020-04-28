@@ -3,6 +3,7 @@ import huaweisms.api.sms as sms
 import huaweisms.api.ussd as ussd
 from db import Connection
 import logging
+import jsonify
 
 class Miamala:
 
@@ -36,5 +37,5 @@ class Miamala:
         """get information of people"""
         query = "SELECT * FROM watu.people"
         watu = self.data.run_query(query)
-        return watu
+        return jsonify(watu)
 
